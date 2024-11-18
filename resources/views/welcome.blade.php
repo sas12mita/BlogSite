@@ -107,9 +107,9 @@
             <div class="logo-container">
                 <h1 class="logo">Blog</h1>
             </div>
-            <div class="auth-links">
-            <a><h5>Login</h5></a> 
-                <h5>Register</h5>
+            <div>
+            <a href="{{route('login')}}" style="color:white;margin-right:10px">Login</a>
+            <a href="{{route('register')}}" style="color:white">register</a>
             </div>
         </div>
     </header>
@@ -125,6 +125,7 @@
             <h3>{{$article->title}}</h3>
             <p>{{$article->content}}</p>
             <p><strong>Category:</strong> {{ $article->category->categoryName ?? 'Uncategorized' }}</p>
+            <p><strong>Uploaded By: {{$article->user->name}}</strong></p>
         </div> 
         @empty
          <h2>No article found</h2>

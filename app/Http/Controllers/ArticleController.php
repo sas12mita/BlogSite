@@ -22,7 +22,7 @@ class ArticleController extends Controller
     }
     public function welcome(Request $request)
     {
-        $articles = Article::with('category')->get();
+        $articles = Article::with('category','user')->get();
         return view('welcome', compact('articles'));
     }
     /**
@@ -47,7 +47,14 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-  
+    public function edit( Article $article){
+        return view('articles.edit',compact('user'));
+
+    }
+    public function show(){
+        
+    }
+   
 
     /**
      * Update the specified resource in storage.

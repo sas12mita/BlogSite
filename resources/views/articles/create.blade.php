@@ -80,6 +80,8 @@
     </head>
 
     <body>
+    <center><a href="{{route('articles.index')}}"><button style="background-color:cornflowerblue;padding:10px;margin-top:10px">View Article</button> </a></center>
+
         <div class="container">
             <header>Create Article</header>
             <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
@@ -94,9 +96,10 @@
                 </div>
                 <div>
                     <label for="category_id">Category:</label>
-                    <select name="category_id" required>
+                    <select name="category_id" value="choose category" required>
+                        <option></option>
                         @foreach($categories as $category)
-                        <option style="background-color:black; color:white" value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option  value="{{ $category->id }}">{{ $category->categoryName }}</option>
                         @endforeach
                     </select>
                 </div>

@@ -39,11 +39,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      */
@@ -68,6 +64,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category -> delete();
-        return redirect()->route('users.index');
+        return redirect()->route('categories.index');
     }
 }

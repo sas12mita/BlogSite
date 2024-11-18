@@ -97,8 +97,8 @@
         <a href="{{route('articles.create')}}" class="button">Add to Article</a>
     </div>
     <div class="button-container">
-        <a href="{{route('categories.create')}}" class="button">View Category</a>
-        <a href="{{route('articles.create')}}" class="button">View Article</a>
+        <a href="{{route('categories.index')}}" class="button">View Category</a>
+        <a href="{{route('articles.index')}}" class="button">View Article</a>
     </div>
     <br><br>
     <center><h1 style="color:red;font-size:30px">Your Articles</h1></center>
@@ -125,7 +125,7 @@
 
                         <td>{{ $article->content }}</td>
                         <td>
-                            <a class="btn btn-primary">Edit</a>
+                            <a href="articles/{{$article -> id}}" class="btn btn-primary">Edit</a>
                             <form action="{{ route('articles.destroy', $article->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
